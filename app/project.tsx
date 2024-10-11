@@ -7,10 +7,17 @@ interface ProjectProps{
     link: string;
 }
 
-export default function Project({name, image, link}: ProjectProps){
+export default function Project({ name, image, link }: ProjectProps) {
     return (
         <div className="relative w-64 h-96 group">
-            <div className="relative w-64 h-96 rounded-lg overflow-hidden shadow-lg">
+            <div className="absolute w-full h-full bg-gray-200 rounded-lg shadow-lg transition-all duration-300 group-hover:-translate-y-16">
+                <div className="flex items-start justify-center h-full">
+                    <Link href={link}>
+                        <span className="text-lg font-semibold">View Project</span>
+                    </Link>
+                </div>
+            </div>
+            <div className="relative w-full h-full rounded-lg overflow-hidden shadow-lg transition-all duration-300 ">
                 <Image
                     src={image}
                     alt={name}
@@ -22,13 +29,6 @@ export default function Project({name, image, link}: ProjectProps){
                     <h3 className="text-xl font-bold">{name}</h3>
                 </div>
             </div>
-            <Link href={link}>
-            <div className="absolute top-0 left-0 w-full h-full bg-gray-200 rounded-lg shadow-lg -z-10 transition-opacity duration-300 opacity-0 group-hover:opacity-100">
-            <div className="flex items-center justify-center h-full">
-                <span className="text-lg font-semibold">View Project</span>
-            </div>
-            </div>
-        </Link>
-      </div>
+        </div>
     )
 }
