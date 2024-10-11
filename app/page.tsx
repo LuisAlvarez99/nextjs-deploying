@@ -9,10 +9,10 @@ export default function Home() {
       <h3>Software Engineer</h3>
       <h3>Student</h3>
       <h3>Human</h3>
-      <Image src="/images/selfie.jpg" alt="This is what Luis Alvarez looks like" width={300} height={300} />
+      <Image src="images/selfie.png" alt="This is what Luis Alvarez looks like" width={300} height={300} />
       <br/>
       <br/>
-      <Project name="Project 1" image="/images/vercel.png" link="https://github.com/LuisAlvarez99/nextjs-deploying" />
+      <Project name="Project 1" image="images/vercel.png" link="https://github.com/LuisAlvarez99/nextjs-deploying" />
     </main>
   );
 }
