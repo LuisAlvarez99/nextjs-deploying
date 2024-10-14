@@ -15,10 +15,10 @@ export default function Home() {
         <h3 className={` ${eduVicWaNtBeginner} font-medium text-3xl`}>Student</h3>
         <h3 className={` ${eduVicWaNtBeginner} font-medium text-3xl`}>Software Engineer</h3>
       </div>
-        <Image className="self-end pr-4" src="/selfie.png" alt="This is what Luis Alvarez looks like" width={350} height={10} />
+        <Image className="self-end pr-4" src="/selfie.png" alt="This is what Luis Alvarez looks like" width={230} height={10} />
     </div>
-    <div className="whitespace-nowrap overflow-x-auto pl-14 pt-4 no-scrollbar h-2/5">
-      <div className="inline-flex gap-12">
+    <div className="whitespace-nowrap overflow-x-auto pl-14 pt-12 no-scrollbar h-3/5">
+      <div className="inline-flex w-1/6 h-full gap-12">
       <Project name="Project 1" image="/vercel.png" link="https://github.com/LuisAlvarez99/nextjs-deploying" />
       <Project name="Project 1" image="/vercel.png" link="https://github.com/LuisAlvarez99/nextjs-deploying" />
       <Project name="Project 1" image="/vercel.png" link="https://github.com/LuisAlvarez99/nextjs-deploying" />
