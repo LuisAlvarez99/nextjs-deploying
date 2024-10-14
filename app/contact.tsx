@@ -1,4 +1,4 @@
-import {didactGothic} from "../utils/fonts";
+import {didactGothic} from "./utils/fonts";
 
 interface ContactProps {
     name: string;

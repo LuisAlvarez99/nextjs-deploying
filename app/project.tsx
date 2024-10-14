@@ -10,7 +10,7 @@ interface ProjectProps{
 export default function Project({ name, image, link }: ProjectProps) {
     return (
         <div className="w-64 group">
-            <div className="top-0 right-0 w-full bg-gray-200 rounded-lg shadow-lg transition-all duration-300 group-hover:translate-x-7">
+            <div className="w-full bg-gray-200 rounded-lg shadow-lg transition-all duration-300 group-hover:translate-x-7">
                 <div className="flex items-center justify-end">
                     <Link href={link}>
                         <span className="text-lg font-semibold w-1 writing-vertical">View Project</span>

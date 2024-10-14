@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Project from "./project";
-import About from "./about/page";
-import Contact from "./contact/page";
+import About from "./about";
+import Contact from "./contact";
 import {eduVicWaNtBeginner} from "./utils/fonts";
 // import Link from "next/link";
 
