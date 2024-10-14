@@ -20,7 +20,7 @@ const config: Config = {
   },
   plugins: [
     // ... other plugins
-    function({ addUtilities }) {
+    function({ addUtilities }: {addUtilities: (utilities: Record<string, Record<string,string>>) => void}) {
       const newUtilities = {
         '.writing-vertical': {
           'writing-mode': 'vertical-rl',
