@@ -15,3 +15,5 @@
  ✓ Compiled /_not-found in 4.3s (530 modules)
  GET /selfie.jpg 404 in 4442ms
  ⨯ The requested resource isn't a valid image for /selfie.jpg received text/html; charset=utf-8
+ ✓ Compiled in 796ms (266 modules)
+ ✓ Compiled in 303ms (261 modules)

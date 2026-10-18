@@ -75,10 +75,15 @@ export default function ProjectsTimeline() {
       {/* Horizontal Timeline Spine */}
       <div className="flex overflow-x-auto gap-6 snap-x snap-mandatory py-6 px-4 pb-12 scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-transparent">
         {filteredProjects.map((project) => (
-          <div
+          <button
             key={project.id}
             onClick={() => setSelectedProject(project)}
-            className={`min-w-[300px] sm:min-w-[400px] flex-shrink-0 snap-center bg-gray-900 rounded-2xl p-6 border-2 cursor-pointer transition-transform hover:-translate-y-2 ${RANK_STYLES[project.rank]}`}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                setSelectedProject(project);
+              }
+            }}
+            className={`text-left min-w-[300px] sm:min-w-[400px] flex-shrink-0 snap-center bg-gray-900 rounded-2xl p-6 border-2 cursor-pointer transition-transform hover:-translate-y-2 ${RANK_STYLES[project.rank]}`}
           >
             <div className="flex justify-between items-start mb-4">
               <span className={`px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider ${RANK_BADGE_STYLES[project.rank]}`}>
@@ -100,7 +105,7 @@ export default function ProjectsTimeline() {
                 </span>
               ))}
             </div>
-          </div>
+          </button>
         ))}
         {filteredProjects.length === 0 && (
           <div className="w-full text-center py-12 text-gray-500">
@@ -114,17 +119,28 @@ export default function ProjectsTimeline() {
         <div
           className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm"
           onClick={() => setSelectedProject(null)}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              setSelectedProject(null);
+            }
+          }}
+          role="button"
+          tabIndex={0}
         >
           <div
             className={`relative w-full max-w-3xl max-h-[90vh] overflow-y-auto bg-gray-900 rounded-2xl border-2 p-8 ${RANK_STYLES[selectedProject.rank]}`}
             onClick={(e) => e.stopPropagation()}
+            onKeyDown={(e) => e.stopPropagation()}
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="modal-title"
           >
             <button
               className="absolute top-4 right-4 text-gray-400 hover:text-white"
               onClick={() => setSelectedProject(null)}
               aria-label="Close modal"
             >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg aria-hidden="true" className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
@@ -136,7 +152,7 @@ export default function ProjectsTimeline() {
                 </span>
                 <span className="text-gray-400">{selectedProject.date}</span>
               </div>
-              <h2 className="text-3xl font-bold text-white mb-4">{selectedProject.title}</h2>
+              <h2 id="modal-title" className="text-3xl font-bold text-white mb-4">{selectedProject.title}</h2>
 
               <div className="flex flex-wrap gap-2 mb-6">
                 {selectedProject.tags.map((tag) => (
@@ -165,7 +181,7 @@ export default function ProjectsTimeline() {
                   rel="noopener noreferrer"
                   className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors flex items-center gap-2"
                 >
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg aria-hidden="true" className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                   </svg>
                   View Live Demo
@@ -178,7 +194,7 @@ export default function ProjectsTimeline() {
                   rel="noopener noreferrer"
                   className="px-6 py-3 bg-gray-800 hover:bg-gray-700 text-white font-medium rounded-lg transition-colors flex items-center gap-2"
                 >
-                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <svg aria-hidden="true" className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                     <path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clipRule="evenodd" />
                   </svg>
                   View Source
