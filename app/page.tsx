@@ -1,9 +1,9 @@
 import Image from "next/image";
-import Project from "./project";
-// import Link from "next/link";
+import Projects from "../src/Projects";
 
 export default function Home() {
-  return <div className="flex min-h-screen flex-col items-center justify-between p-24">
+  return (
+    <div className="flex min-h-screen flex-col items-center justify-between p-24">
       <h1>Luis Alvarez</h1>
       <h3>Software Engineer</h3>
       <h3>Student</h3>
@@ -11,7 +11,7 @@ export default function Home() {
       <Image src="/selfie.jpg" alt="This is what Luis Alvarez looks like" width={300} height={300} />
       <br/>
       <br/>
-      <Project name="Project 1" image="/favicon.ico" link="https://github.com/LuisAlvarez99/nextjs-deploying" />
+      <Projects />
     </div>
-
+  );
 }
