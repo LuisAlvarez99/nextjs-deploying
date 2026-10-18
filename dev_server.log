@@ -1,0 +1,17 @@
+
+> nextjs@0.1.0 dev
+> next dev
+
+  ▲ Next.js 14.2.15
+  - Local:        http://localhost:3000
+
+ ✓ Starting...
+ ✓ Ready in 1742ms
+ ○ Compiling / ...
+ ✓ Compiled / in 5.2s (559 modules)
+ GET / 200 in 5812ms
+ ✓ Compiled in 559ms (261 modules)
+ ○ Compiling /_not-found ...
+ ✓ Compiled /_not-found in 4.3s (530 modules)
+ GET /selfie.jpg 404 in 4442ms
+ ⨯ The requested resource isn't a valid image for /selfie.jpg received text/html; charset=utf-8
