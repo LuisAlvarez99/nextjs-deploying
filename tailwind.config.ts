@@ -8,12 +8,27 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      writingMode: {
+        'vertical': 'vertical-rl',
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+
     },
   },
-  plugins: [],
+  plugins: [
+    // ... other plugins
+    function({ addUtilities }: {addUtilities: (utilities: Record<string, Record<string,string>>) => void}) {
+      const newUtilities = {
+        '.writing-vertical': {
+          'writing-mode': 'vertical-rl',
+          'text-orientation': 'upright',
+        },
+      }
+      addUtilities(newUtilities)
+    },
+  ],
 };
 export default config;
