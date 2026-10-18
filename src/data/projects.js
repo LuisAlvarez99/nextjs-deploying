@@ -67,6 +67,6 @@ const rawProjects = [
 ];
 
 // Sort projects by date in reverse-chronological order (newest first)
-export const projects = rawProjects.sort((a, b) => {
+export const projects = [...rawProjects].sort((a, b) => {
   return new Date(b.date).getTime() - new Date(a.date).getTime();
 });

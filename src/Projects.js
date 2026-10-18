@@ -36,6 +36,14 @@ export default function Projects() {
     }
   };
 
+  const handleBackdropKeyDown = (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      if (e.target.classList.contains('modal-backdrop')) {
+        setSelectedProject(null);
+      }
+    }
+  };
+
   return (
     <section className="projects-section">
       <div className="filter-pills">
@@ -56,6 +64,9 @@ export default function Projects() {
             key={project.id}
             className={`project-card rank-${project.rank}`}
             onClick={() => setSelectedProject(project)}
+            role="button"
+            tabIndex={0}
+            onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') setSelectedProject(project); }}
           >
             <div className="project-card-header">
               <span className={`rank-badge ${project.rank}`}>{project.rank}</span>
@@ -68,7 +79,14 @@ export default function Projects() {
       </div>
 
       {selectedProject && (
-        <div className="modal-backdrop" onClick={handleBackdropClick}>
+        <div
+          className="modal-backdrop"
+          onClick={handleBackdropClick}
+          onKeyDown={handleBackdropKeyDown}
+          role="dialog"
+          aria-modal="true"
+          tabIndex={-1}
+        >
           <div className="modal-content">
             <button className="modal-close-btn" onClick={() => setSelectedProject(null)}>
               &times;

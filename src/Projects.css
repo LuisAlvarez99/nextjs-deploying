@@ -104,11 +104,26 @@
   text-transform: uppercase;
   font-weight: bold;
 }
-.rank-badge.champion { background: rgba(154, 75, 250, 0.2); color: #9a4bfa; }
-.rank-badge.diamond { background: rgba(0, 210, 255, 0.2); color: #00d2ff; }
-.rank-badge.gold { background: rgba(245, 158, 11, 0.2); color: #f59e0b; }
-.rank-badge.silver { background: rgba(148, 163, 184, 0.2); color: #94a3b8; }
-.rank-badge.bronze { background: rgba(205, 127, 50, 0.2); color: #cd7f32; }
+.rank-badge.champion {
+  background: rgba(154, 75, 250, 0.2);
+  color: #9a4bfa;
+}
+.rank-badge.diamond {
+  background: rgba(0, 210, 255, 0.2);
+  color: #00d2ff;
+}
+.rank-badge.gold {
+  background: rgba(245, 158, 11, 0.2);
+  color: #f59e0b;
+}
+.rank-badge.silver {
+  background: rgba(148, 163, 184, 0.2);
+  color: #94a3b8;
+}
+.rank-badge.bronze {
+  background: rgba(205, 127, 50, 0.2);
+  color: #cd7f32;
+}
 
 .date-badge {
   font-size: 0.85rem;
