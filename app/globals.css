@@ -24,3 +24,117 @@
 .animate-wave-revolve {
   animation: wave-revolve 4s linear infinite;
 }
+
+/* Directional sweeping fade animations for SplitEmailButton */
+@keyframes sweep-ltr {
+  0% {
+    -webkit-clip-path: inset(0 100% 0 0);
+    clip-path: inset(0 100% 0 0);
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  40% {
+    opacity: 1;
+  }
+  100% {
+    -webkit-clip-path: inset(0 0 0 0);
+    clip-path: inset(0 0 0 0);
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-sweep-ltr {
+  animation: sweep-ltr 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes sweep-rtl {
+  0% {
+    -webkit-clip-path: inset(0 0 0 100%);
+    clip-path: inset(0 0 0 100%);
+    opacity: 0;
+    transform: translateX(10px);
+  }
+  40% {
+    opacity: 1;
+  }
+  100% {
+    -webkit-clip-path: inset(0 0 0 0);
+    clip-path: inset(0 0 0 0);
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-sweep-rtl {
+  animation: sweep-rtl 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes beam-ltr {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  30% {
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+.animate-beam-ltr {
+  animation: beam-ltr 0.6s ease-out forwards;
+}
+
+@keyframes beam-rtl {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  30% {
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+
+.animate-beam-rtl {
+  animation: beam-rtl 0.6s ease-out forwards;
+}
+
+/* Full button sweeps that continue across to the opposite end, covering and hiding the unselected option */
+@keyframes sweep-full-ltr {
+  0% {
+    -webkit-clip-path: inset(0 100% 0 0);
+    clip-path: inset(0 100% 0 0);
+  }
+  100% {
+    -webkit-clip-path: inset(0 0 0 0);
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+.animate-sweep-full-ltr {
+  animation: sweep-full-ltr 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes sweep-full-rtl {
+  0% {
+    -webkit-clip-path: inset(0 0 0 100%);
+    clip-path: inset(0 0 0 100%);
+  }
+  100% {
+    -webkit-clip-path: inset(0 0 0 0);
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+.animate-sweep-full-rtl {
+  animation: sweep-full-rtl 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+
